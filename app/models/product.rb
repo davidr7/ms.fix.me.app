@@ -10,4 +10,8 @@ class Product < ActiveRecord::Base
   def self.random_best_sellers(number)
   	find(:all, :limit => number, :order => 'RAND()')
   end
+  
+  def self.order(selected_order)
+    find(:all, :order => selected_order)
+  end
 end

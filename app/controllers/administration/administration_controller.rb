@@ -1,3 +1,12 @@
+#
+ # Administrator controller class.
+ #
+ # @author:
+ #
+ # @version: 1.0
+ # @notes: 
+#
+
 class Administration::AdministrationController < ApplicationController
 	layout 'administration/application'
 

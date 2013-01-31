@@ -70,11 +70,15 @@
 
 		table {
 			width: 100%;
+			
+			.hilite {
+			    background-color: yellow;
+			}
 
 			.odd {
 				background-color: #8EE5AA;
 				&:hover {
-					background-color: white;
+					background-color: yellow;
 				}
 			}
 			.even {

@@ -1,18 +1,31 @@
+<hr>
+
 <h1>Listing products</h1>
+
+<br>
+
+<button >Bulk</button>
+
+<hr>
 
 <table>
   <tr>
-    <th>Name</th>
-    <th>Subcode</th>
-    <th>Url segment</th>
-    <th>Published status</th>
-    <th>Categories</th>
+    <th align="left">Selected</th>
+    <th class="@name_class" id="name_header" align="left">
+      <%=link_to 'Product', :sort => 'name' %></th>
+    <th class="@subcode_class" id="subcode_header" align="left">
+      <%=link_to 'Subcode', :sort => 'subcode' %> </th>
+    <th align="left">Url segment</th>
+    <th class="@published_status_class" id="published_status_header" align="left">
+      <%=link_to 'Published Status', :sort => 'status' %></th>
+    <th align="left">Categories</th>
     <th></th>
     <th></th>
   </tr>
 
 <% @products.each do |product| %>
   <tr class='<%= cycle("odd", "even") %>'>
+    <td><input type="checkbox"></td>
     <td><%= link_to(product.name, administration_product_path(product)) %></td>
     <td><%= product.subcode %></td>
     <td><%= product.url_segment %></td>

@@ -81,7 +81,7 @@ $mobile: new-breakpoint(max-width 360px 3);
 			@include box-shadow(0 0 5px 3px hsla(0, 0%, 0%, 0.65));
 
 			margin-bottom: 20px;
-			height: 180px;
+			height: 450px;
 			
 			background-color: #eeeebb;
 
@@ -104,6 +104,10 @@ $mobile: new-breakpoint(max-width 360px 3);
 			}
 			.strapline {
 				text-shadow: 2px 2px 2px rgba(255, 255, 255, 1);
+				
+				.counter {
+			    font-weight: bold;
+			  }
 			}
 		}
 	}

@@ -1,9 +1,34 @@
+#
+ # Administrator products controller.
+ #
+ # @author:
+ #
+ # @version: 1.1
+ # @notes: - Added way of showing all with multiple published status
+ #         - Allow the admin order the rows by clicking the header
+ #         - !!** Implement button functionality, so we can 'bulk archive' selected products
+#
+
 class Administration::ProductsController < Administration::AdministrationController
   # GET /products
   # GET /products.json
   def index
-    @products = Product.published
-
+    sort = params[:sort]
+    
+    # Initialize @products with all the producs availables
+    @products = Product.find(:all)
+    
+    # Order @products by selected choice
+    case sort
+      when 'name'
+        @products, @name_class = Product.find(:all), 'hilite'
+      when 'status'
+        @products, @published_status_class = Product.order(:published_status), 'hilite'
+      when 'subcode'
+        @products = Product.order(:subcode)
+    end
+    
+    # Format the code depending if it's html or json
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @products }

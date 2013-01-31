@@ -2,14 +2,15 @@
 
 <table>
   <tr>
-    <th>Sku</th>
-    <th>Product</th>
-    <th>Price</th>
-    <th>Weight in grams</th>
-    <th>Description</th>
-    <th>Bay</th>
-    <th>Stock level total</th>
-    <th>Stock level reserved</th>
+    <th alling="left">Sku</th>
+    <th alling="left">Product</th>
+    <th alling="left">Price</th>
+    <th alling="left">Price Range</th>
+    <th alling="left">Weight in grams</th>
+    <th alling="left">Description</th>
+    <th alling="left">Bay</th>
+    <th alling="left">Stock level total</th>
+    <th alling="left">Stock level reserved</th>
     <th></th>
     <th></th>
     <th></th>
@@ -20,6 +21,7 @@
     <td><%= variant.sku %></td>
     <td><%= variant.product_id %></td>
     <td><%= variant.price %></td>
+    <td><%= variant.min_variant_price(variant) %> - <%= variant.max_variant_price(variant) %></td>
     <td><%= variant.weight_in_grams %></td>
     <td><%= variant.description %></td>
     <td><%= variant.bay %></td>

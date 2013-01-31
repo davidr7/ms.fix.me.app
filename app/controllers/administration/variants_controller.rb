@@ -1,3 +1,12 @@
+#
+ # Administrator variants controller class.
+ #
+ # @author:
+ #
+ # @version: 1.0
+ # @notes: 
+#
+
 class Administration::VariantsController < Administration::AdministrationController
   # GET /variants
   # GET /variants.json
@@ -41,7 +50,6 @@ class Administration::VariantsController < Administration::AdministrationControl
   # POST /variants.json
   def create
     @variant = Variant.new(params[:variant])
-
     respond_to do |format|
       if @variant.save
         format.html { redirect_to administration_variant_path(@variant), notice: 'Variant was successfully created.' }

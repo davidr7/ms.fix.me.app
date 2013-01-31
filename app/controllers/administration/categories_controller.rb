@@ -1,3 +1,12 @@
+#
+ # Administrator categories controller class.
+ #
+ # @author:
+ #
+ # @version: 1.0
+ # @notes: 
+#
+
 class Administration::CategoriesController < Administration::AdministrationController
   # GET /categories
   # GET /categories.json

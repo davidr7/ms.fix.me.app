@@ -1,5 +1,16 @@
 <div>
+  <hr>
+  <br>
+  <form method="post">
+    <input name="chunk" type="text"></input>
+    <input type="button" value="Submit me!"></input>
+  </form>
+  <br>
+  <hr>
+  <br>
 	<% @products.each do |product| %>
-		<%= render :partial => '/product-tile', :locals => { :product => product } %>
+	  <% if (product.published_status = "3") %>
+		  <%= render :partial => '/product-tile', :locals => { :product => product } %>
+	  <% end %>	
 	<% end %>
 </div>

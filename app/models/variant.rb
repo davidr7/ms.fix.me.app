@@ -10,5 +10,27 @@ class Variant < ActiveRecord::Base
   def stock_level_available
   	stock_level_total - stock_level_reserved
   end
+  
+  def min_variant_price(variant)
+    variants = Variant.where("product_id = ?", variant.product_id)
+    min = variant.price
+    variants.each do |v|
+      if (v.price < variant.price)
+        min = v.price
+      end
+    end
+    min
+  end
+  
+  def max_variant_price(variant)
+    variants = Variant.where("product_id = ?", variant.product_id)
+    max = variant.price
+    variants.each do |v|
+      if (v.price > variant.price)
+        max = v.price
+      end
+    end
+    max
+  end
 
 end
