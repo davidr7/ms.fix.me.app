@@ -2,7 +2,8 @@ class Administration::ProductsController < Administration::AdministrationControl
   # GET /products
   # GET /products.json
   def index
-    @products = Product.published
+    #@products = Product.published
+    @products = Product.list_of_products()
 
     respond_to do |format|
       format.html # index.html.erb
