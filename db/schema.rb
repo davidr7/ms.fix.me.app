@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130203232910) do
+ActiveRecord::Schema.define(:version => 20130205215740) do
 
   create_table "categories", :force => true do |t|
     t.string   "name"
@@ -29,6 +29,13 @@ ActiveRecord::Schema.define(:version => 20130203232910) do
     t.integer "category_id"
     t.integer "product_id"
     t.integer "position"
+  end
+
+  create_table "chunks", :force => true do |t|
+    t.string   "user"
+    t.text     "chunk"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
   end
 
   create_table "products", :force => true do |t|

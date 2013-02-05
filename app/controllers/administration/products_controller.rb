@@ -13,8 +13,21 @@ class Administration::ProductsController < Administration::AdministrationControl
   # GET /products
   # GET /products.json
   def index
+    sort = params[:sort]
+    
     #@products = Product.published
     @products = Product.list_of_products()
+    
+    # Order @products by selected choice
+    case sort
+      when 'name'
+        @products = Product.find(:all)
+      when 'status'
+        @products = Product.list_of_products(:published_status)
+      when 'subcode'
+        @products = Product.list_of_products(:subcode)
+    end   
+    
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @products }

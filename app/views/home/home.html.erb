@@ -1,3 +1,13 @@
+<hr>
+<div>
+  <br>
+    <form id="form" method="post">
+      <input id="text_chunk" type="text">
+      <input id="button_chunk" type="submit" value="Submit me!">
+    </form>
+  <br>
+</div>  
+<hr>
 <div>
 	<% @products.each do |product| %>
 		<%= render :partial => '/product-tile', :locals => { :product => product } %>
