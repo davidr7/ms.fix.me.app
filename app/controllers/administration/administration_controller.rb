@@ -1,5 +1,18 @@
+#
+ #
+ # Administration controller that handles de administration main functionallity
+ #
+ # @author: 
+ # 
+ # @ version: 1.1
+ # 
+ # @notes:
+ # 
+#
 class Administration::AdministrationController < ApplicationController
 	layout 'administration/application'
+
+  http_basic_authenticate_with :name => "david", :password => "moneyspyder", :except => []
 
 	def archive
 		@model = params[:klass].constantize.find(params[:id])
