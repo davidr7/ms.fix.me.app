@@ -52,7 +52,7 @@ class Administration::ProductsController < Administration::AdministrationControl
   # POST /products.json
   def create
     @product = Product.new(params[:product])
-    @product.selected_false()
+    #@product.selected_false()
     respond_to do |format|
       if @product.save
         format.html { redirect_to administration_product_path(@product), notice: 'Product was successfully created.' }
