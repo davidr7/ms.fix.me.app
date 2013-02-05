@@ -4,7 +4,6 @@ class Administration::ProductsController < Administration::AdministrationControl
   def index
     #@products = Product.published
     @products = Product.list_of_products()
-
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @products }
@@ -42,7 +41,7 @@ class Administration::ProductsController < Administration::AdministrationControl
   # POST /products.json
   def create
     @product = Product.new(params[:product])
-
+    @product.selected_false()
     respond_to do |format|
       if @product.save
         format.html { redirect_to administration_product_path(@product), notice: 'Product was successfully created.' }

@@ -7,8 +7,19 @@
 			<%= link_to(product.name, product) %>
 		</div>
 	</div>
-	<div class='strapline'>
+ 
+  <div class='strapline'>
 		<%= product.strapline %><br />
 		<%= pluralize(product.variants.size, 'variant') %>
-	</div>
+  </div>
+  <hr> 
+  <table>
+    <% product.variants.each do |variant| %>
+      <tr>
+        <td>
+          <%= "#{variant.sku} :: #{variant.price}" %>
+        </td>
+      </tr>
+    <% end %>
+  </table>
 </div>

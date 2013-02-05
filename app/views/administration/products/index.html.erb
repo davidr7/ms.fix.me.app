@@ -1,18 +1,20 @@
 <h1>Listing products</h1>
 
 <table>
-  <tr>
-    <th>Name</th>
-    <th>Subcode</th>
-    <th>Url segment</th>
-    <th>Published status</th>
-    <th>Categories</th>
-    <th></th>
-    <th></th>
+    <tr align="left"> 
+        <th>Selected</th>
+        <th>Name</th>
+        <th>Subcode</th>
+        <th>Url segment</th>
+        <th>Published status</th>
+        <th>Categories</th>
+        <th></th>
+        <th></th>
   </tr>
 
 <% @products.each do |product| %>
   <tr class='<%= cycle("odd", "even") %>'>
+      <td><input type="checkbox" checked=product.selected ></td>  
     <td><%= link_to(product.name, administration_product_path(product)) %></td>
     <td><%= product.subcode %></td>
     <td><%= product.url_segment %></td>
