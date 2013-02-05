@@ -18,6 +18,7 @@
       <tr>
         <td>
           <%= "#{variant.sku} :: #{variant.price}" %>
+          <%= "[#{min_variant_price(variant)} - #{max_variant_price(variant)}]" %>
         </td>
       </tr>
     <% end %>

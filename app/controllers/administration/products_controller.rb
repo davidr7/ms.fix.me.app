@@ -1,3 +1,14 @@
+#
+ #
+ # Controller that handles administration products views
+ #
+ # @author:
+ #
+ # @version: 1.1
+ #
+ # @notes
+ # 
+#
 class Administration::ProductsController < Administration::AdministrationController
   # GET /products
   # GET /products.json
