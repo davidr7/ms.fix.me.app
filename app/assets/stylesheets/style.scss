@@ -104,7 +104,11 @@ $mobile: new-breakpoint(max-width 360px 3);
 			}
 			.strapline {
 				text-shadow: 2px 2px 2px rgba(255, 255, 255, 1);
-			}
+	      font-weight: bold;
+      }
+      .counter {
+        font-weight: bold;
+      }
 		}
 	}
 }
